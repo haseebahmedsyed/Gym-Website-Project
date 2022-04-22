@@ -1,0 +1,167 @@
+/* #main-head { */
+    /* background-image: linear-gradient(#423f3f, rgb(37, 34, 34)); */
+    /* background-image: linear-gradient(#b42c2c, rgb(100, 100, 100)); */
+    /* background-color: rgb(34, 32, 32); */
+/* } */
+
+/* #main-head-content {
+    color: white;
+    padding: 15px;
+    font-family: 'Righteous', cursive;
+    margin: 0px;
+} */
+
+.mydiv{
+    margin: 0;
+}
+header{
+    /* margin-bottom: 10px; */
+}
+
+#main-head {
+    background-color: rgba(0, 0, 0, 0.85);
+    margin: 0;
+}
+
+#main-head-content {
+    color: white;
+    padding: 15px;
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    margin: 0px;
+}
+
+.login-btn-of-main-heading{
+    position: absolute;
+    top: 19px;
+    right: 28px;
+    text-decoration: none;
+    font-size: 23px;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 6px 18px;
+    color: white;
+    background-color: #2f3030;
+}
+
+.login-btn-of-main-heading:hover{
+    color: black;
+    background-color: #f6c501;
+    cursor: pointer;
+}
+
+.ul-nav {
+    list-style-type: none;
+    /* padding: 10px; */
+    /* margin-left: 30px; */
+    /* padding-left: 40px; */
+    /* width: 100%;
+    text-align: center; */
+    /* margin: auto; */
+    /* word-spacing: 20px; */
+    /* padding-left: 100%;
+    padding-right: 100%; */
+    margin-bottom: 0;
+    overflow: hidden;
+    background-image: repeating-conic-gradient(rgb(52, 52, 52) 10%, rgb(0, 0, 0) 15%);
+    opacity: 0.80;
+}
+/* #addcart{
+height: 100%;
+} */
+
+
+.ul-nav li{
+    font-size: 19px;
+}
+
+.li-nav {
+    display: inline;
+    float: left;
+    margin-left: 22px;
+    margin-right: 22px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li Link{
+    
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-button:hover {
+    color: #249069;
+}
+
+.nav-active:hover{
+    color: white !important;
+}
+
+.active {
+    border-radius: 20px;
+    background-color: #249069;
+}
+
+#navbar, #navbar-2{
+    width: 100%;
+    margin: 0;
+}
+
+/* Sticky NavBar */
+.ul-nav-after{
+    list-style-type: none;
+    padding: 10px;
+    overflow: hidden;
+    /* margin-top: 0px; */
+    background-image: repeating-conic-gradient(rgb(52, 52, 52) 10%, rgb(0, 0, 0) 15%);
+    /* opacity: 0.8; */
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 1;
+}
+
+.li-nav-after {
+    display: inline;
+    float: left;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#main-head-content-after{
+    color: white;
+    font-size: 26px;
+    font-family: 'Righteous', cursive;
+    margin: 8px;
+}
+
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+/* .sticky + .content {
+    padding-top: 60px;
+} */
+
+.li-nav-member:hover{
+    border-radius: 20px;
+    background-color: #249069;
+}
+
+.nav-button-member:hover{
+    color: white;
+}

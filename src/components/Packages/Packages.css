@@ -1,0 +1,46 @@
+/* .packBack{
+    background-image: url('https://atmosphere.com.pk/wp-content/uploads/2021/12/packages-banner_new.png');
+} */
+.pic{
+    width: 100%;
+}
+.headings{
+
+}
+.containerr{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3%;
+    /* position: fixed; */
+}
+.packimg{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 30%;
+}
+.content{
+    width: 70%;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    margin-left:10px;
+    border: 2px solid white;
+    height: 100%;
+    margin-right: 10px;
+    top: 0;
+    position: sticky;
+}
+
+.points{
+     margin-left: 0;
+    margin: 0px;
+    display: block;
+    margin-right: 45%;
+    width: 560px;
+    
+}
+p{
+    font-size: 20px;
+}
