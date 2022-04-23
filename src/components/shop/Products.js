@@ -10,7 +10,7 @@ function Products(props) {
     return (
         <div className='row'  >
             {props.ProductArray.map((element) => {
-                return <div className='col-md-3 px-3 my-3'>
+                return <div className='col-md-4 my-3' style={{paddingLeft:'-5px',marginLeft:"-5px"}}>
                     <div className='card' style={{backgroundColor:'black',border:'3px solid white',borderRadius:'5' }}>
                         <img src={element.image} className="card-img-top" alt="image" />
                         <div className="card-body">
