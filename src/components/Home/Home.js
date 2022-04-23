@@ -119,9 +119,10 @@ function Home() {
                 }
                 else {
                   setFirstBtnState(true)
-                  btn1.style.marginTop = "260px";
+                  btn1.style.marginTop = "60px";
                   btn1.style.width = "130px";
-                  btn1.style.height="45px"
+                  btn1.style.height="45px";
+                  btn1.style.padding = '11px'
                   // btn1.style.fontSize="14px"
                   // btn1.style.fontWeight = "bold"
                 }
@@ -151,10 +152,11 @@ function Home() {
                 else {
                   setSecondBtnState(true)
                   let btn2 = document.getElementById('myBtn2')
-                  btn2.style.marginTop = "240px";
+                  btn2.style.marginTop = "80px";
                   btn2.style.width = "130px";
                   btn2.style.height="45px"
                   btn2.style.fontSize="14px"
+                  btn2.style.padding = '11px'
                   btn2.style.fontWeight = "bold"
                 }
               }} className="ourOffers-button" id="myBtn2"> {!secondBtnState ? "Read more" : "Read Less"}</button>
@@ -183,10 +185,11 @@ function Home() {
                 }
                 else {
                   setThirdBtnState(true)
-                  btn3.style.marginTop = "260px";
+                  btn3.style.marginTop = "80px";
                   btn3.style.width = "130px";
                   btn3.style.height="45px"
                   btn3.style.fontSize="14px"
+                  btn3.style.padding = '11px'
                   btn3.style.fontWeight = "bold"
                 }
               }} className="ourOffers-button" id="myBtn3"> {!thirdBtnState ? "Read more" : "Read Less"}</button>
