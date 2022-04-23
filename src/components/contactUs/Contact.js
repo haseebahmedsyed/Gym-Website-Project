@@ -78,7 +78,7 @@ function Contact() {
         <>
             <div className="google-map-div">
                 <div className="contact-us">
-                    <p className="font-white visit-us-heading">contact<span className="font-yellow"> us</span></p>
+                    <h1 className="font-white visit-us-heading">CONTACT<span className="font-yellow"> US</span></h1>
                 </div>
 
                 <iframe className="google-map"
