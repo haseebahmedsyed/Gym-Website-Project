@@ -46,7 +46,7 @@ function Facilities() {
             </div>
             <section id="facilities-section2">
 
-                <div className="main-content2">
+                <div className="main-content2" style={{margin:'75px 0px'}}>
                     <div className="rectangular-box2">
                         <img src="https://atmosphere.com.pk/wp-content/uploads/2020/10/Cardio.jpg?id=1463" alt="" />
                         <div id="cardio-section2" className="inner-content2 reveal2">

@@ -39,8 +39,7 @@ body{
 }
 
 .rectangular-box2 > img{
-    /* width: 645px; */
-    width: 700px;
+    width: 640px;
     height: 490px;
 }
 

@@ -92,17 +92,17 @@
 
 
 .contact-us-submit{
-    width: 100px;
-    height: 35px;
     text-transform: uppercase;
     background-color: #2f3030;
     color: white;
     font-weight: bold;
     border: 2px solid white;
+    border-radius: 10px;
     cursor: pointer;
     letter-spacing: 0.1em;
     font-size: 14px;
-    margin: 10px 10px;
+    margin: 10px 38px;
+    padding: 10px 20px;
 }
 
 .contact-us-submit:hover{
@@ -194,8 +194,6 @@
 
 .visit-us-heading{
     font-size: 50px;
-    /* font-weight: bold; */
-    text-transform: capitalize;
     letter-spacing: 1px;
 }
 
