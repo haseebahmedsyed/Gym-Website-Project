@@ -60,7 +60,7 @@ body{
     background-color: white;
     color: black;
 } */
-input::-webkit-input-placeholder {
+#myInp::-webkit-input-placeholder {
     color: red;
     text-align: center;
 }
