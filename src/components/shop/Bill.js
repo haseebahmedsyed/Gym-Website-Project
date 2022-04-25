@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState ,useContext} from 'react'
 import { useNavigate } from 'react-router';
 import Footer from '../Footer/Footer';
+import cartContext from '../../context/cartContext';
 import './Bill.css'
 
 function Bill() {
@@ -8,6 +9,8 @@ function Bill() {
   const refopen = useRef(null);
   const navigate = useNavigate()
   const array = JSON.parse(localStorage.getItem('cartArray'))
+  const context = useContext(cartContext)
+
 
   const total = array.reduce(function (total, obj) {
     return (
@@ -23,6 +26,8 @@ function Bill() {
     console.log(checker)
 
     localStorage.setItem("cartArray", JSON.stringify([]))
+    localStorage.setItem("itemNo",JSON.stringify(null))
+    context.setMyItems(0)
 
 
   }
@@ -36,7 +41,9 @@ function Bill() {
   const cardNumPattern2 = /^[4||5]{1}[0-9]{15}$/
   const ccvPattern2 = /^[0-9]{3}$/
 
-  const[myCredentials,setMyCredentials]=useState({city:"",address:"",postalcode:"",email:"",phone:"",payMethod:"",owner:"",cardNum:"",expDate:"",ccv:""})
+  // const[myCredentials,setMyCredentials]=useState({city:"",address:"",postalcode:"",email:"",phone:"",payMethod:"",owner:"",cardNum:"",expDate:"",ccv:""})
+  const[myCredentials,setMyCredentials]=useState({city:"",address:"",postalcode:"",email:"",phone:"",owner:"",cardNum:"",expDate:"",ccv:""})
+  const[payMethod,setPayMethod]=useState('Cash On Delivery')
 
   const [checker,SetChecker]=useState(null)
 
@@ -96,7 +103,7 @@ function Bill() {
         </div>
         <div className="checkout" >
           <h1 className='text-center mb-4' style={{ color: '#f6c501' }}>CHECKOUT</h1>
-          {/* <form > */}
+          {/* <form onSubmit={handleOnSubmit} > */}
           <div className='py-2'>
             <label >City</label><br />
             <input className='inputBoxes' style={{width:'100%',height:'45px',outline:'none'}} onChange={handleRegOnChange}  type="text" name="city" id={(checker=== "cityblank" &&  checker!==null)?"null3":(checker=== "city" &&  checker!==null)?"success3":(checker==="citynot" &&  checker!==null) &&"error3"} required />
@@ -123,11 +130,11 @@ function Bill() {
 
             <div className="row my-5 text-center">
               <div className="col-md-6">
-                <input type="radio" onChange={handleRegOnChange} name="payMethod" id='methodPay' />
+                <input type="radio" onClick={(e)=>{setPayMethod(e.target.value)}} value='Pay With Card' name="payMethod" id='methodPay' />
                 <label className='mx-3' >Pay With Card</label>
               </div>
               <div className="col-md-6">
-                <input type="radio" onChange={handleRegOnChange} name="payMethod" id='methodPay' />
+                <input type="radio" onClick={(e)=>{setPayMethod(e.target.value)}} value='Cash On Delivery' name="payMethod" id='methodPay' />
                 <label className='mx-3' >Cash On Delivery</label>
               </div>
             </div>
@@ -135,29 +142,30 @@ function Bill() {
             <div className='row my-2'>
               <div className='col-md-6'>
                 <label>Owner</label><br />
-                <input className='pay my-2' style={{width:'100%',height:'45px',outline:'none'}} onChange={handleRegOnChange} id={(checker=== "ownerblank" &&  checker!==null)?"null3":(checker=== "owner" &&  checker!==null)?"success3":(checker==="ownernot" &&  checker!==null) &&"error3"} type="text" name='owner' />
+                <input className='pay my-2' disabled={payMethod==='Cash On Delivery'} style={{width:'100%',height:'45px',outline:'none'}} onChange={handleRegOnChange} id={(checker=== "ownerblank" &&  checker!==null)?"null3":(checker=== "owner" &&  checker!==null)?"success3":(checker==="ownernot" &&  checker!==null) &&"error3"} type="text" name='owner' />
 
               </div>
               <div className="col-md-6">
                 <label>Card Number</label><br />
-                <input className='pay my-2' style={{width:'100%',height:'45px',outline:'none'}} onChange={handleRegOnChange} id={(checker=== "cardNumblank" &&  checker!==null)?"null3":(checker=== "cardNum" &&  checker!==null)?"success3":(checker==="cardNumnot" &&  checker!==null) &&"error3"} type="text" name='cardNum' />
+                <input disabled={payMethod==='Cash On Delivery'} className='pay my-2' style={{width:'100%',height:'45px',outline:'none'}} onChange={handleRegOnChange} id={(checker=== "cardNumblank" &&  checker!==null)?"null3":(checker=== "cardNum" &&  checker!==null)?"success3":(checker==="cardNumnot" &&  checker!==null) &&"error3"} type="text" name='cardNum' />
               </div>
 
               <div className="col-md-6">
                 <label>Expire Date</label><br />
-                <input className='pay my-2' style={{width:'100%',height:'45px',outline:'none'}} onChange={handleRegOnChange}  type="date" name='expDate' />
+                <input disabled={payMethod==='Cash On Delivery'} className='pay my-2' style={{width:'100%',height:'45px',outline:'none'}} onChange={handleRegOnChange}  type="date" name='expDate' />
               </div>
               {/* </div> */}
 
               <div className="col-md-6">
                 <label>CCV</label><br />
-                <input className='pay my-2' style={{width:'100%',height:'45px',outline:'none'}} onChange={handleRegOnChange} id={(checker=== "ccvblank" &&  checker!==null)?"null3":(checker=== "ccv" &&  checker!==null)?"success3":(checker==="ccvnot" &&  checker!==null) &&"error3"} type="text" name='ccv' />
+                <input disabled={payMethod==='Cash On Delivery'} className='pay my-2' style={{width:'100%',height:'45px',outline:'none'}} onChange={handleRegOnChange} id={(checker=== "ccvblank" &&  checker!==null)?"null3":(checker=== "ccv" &&  checker!==null)?"success3":(checker==="ccvnot" &&  checker!==null) &&"error3"} type="text" name='ccv' />
               </div>
             </div>
 
           </div>
           <div className="btnConfirmPurchase">
             <button type='button' onClick={handleOnSubmit} className='btn' id="submit-btn" >CONFIRM PURCHASE</button>
+            {/* <input type='button'  className='btn' id="submit-btn" >CONFIRM PURCHASE</input> */}
           </div>
 
           {/* </form> */}
@@ -189,7 +197,6 @@ function Bill() {
               </div>
               <div className="modal-footer" style={{ backgroundColor: "grey" }}>
                 <button style={{ backgroundColor: 'red', color: 'white' }} type="button" onClick={() => navigate('/shop')} className="btn btn-secondary" data-bs-dismiss="modal">OK</button>
-                {/* <button type="button" className="btn btn-primary">Save changes</button> */}
               </div>
             </div>
           </div>

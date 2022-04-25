@@ -60,3 +60,14 @@ body{
     background-color: white;
     color: black;
 } */
+input::-webkit-input-placeholder {
+    color: red;
+    text-align: center;
+}
+/* 
+input:focus::-webkit-input-placeholder {
+    color: black;
+}
+input:cha::-webkit-input-placeholder {
+    color: black;
+} */

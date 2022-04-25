@@ -9,6 +9,7 @@ function Cart() {
   const [filteredArray, setfilteredArray] = useState(array)
   const context = useContext(cartContext)
   const [inputVal, setInputVal] = useState(1)
+  // const [inputVal, setInputVal] = useState(array.quantity)
   const [itemId, setItemId] = useState(null)
   const [incPrice, setIncPrice] = useState(null)
   const navigate = useNavigate();
@@ -43,8 +44,11 @@ function Cart() {
       return (prod.id !== elem.id)
     })
     setfilteredArray(a)
-
     localStorage.setItem('cartArray', JSON.stringify(a))
+
+    let gettingItem = JSON.parse(localStorage.getItem("itemNo"))
+    localStorage.setItem("itemNo",JSON.stringify(gettingItem-1))
+    context.setMyItems(gettingItem-1)
   }
 
 
@@ -74,7 +78,7 @@ function Cart() {
                     <td>{i + 1}</td>
                     <td className='px-5'>{element.name}</td>
                     <td className='px-4'>{element.price}</td>
-                    <td><input onChange={(e) => { handleOnChange(element, e) }} placeholder={element.quantity} className='inputBox' type='number' /> <i style={{ color: 'red', cursor: 'pointer' }} onClick={() => handleRefresh(element)} class="fa fa-refresh" aria-hidden="true"></i>
+                    <td><input onChange={(e) => { handleOnChange(element, e) }} style={{color:'red',textAlign:'center'}} placeholder={element.quantity} className='inputBox' type='number' /> <i style={{ color: 'red', cursor: 'pointer' }} onClick={() => handleRefresh(element)} class="fa fa-refresh" aria-hidden="true"></i>
                     </td>
                     <td className='px-4' >{element.price * element.quantity}</td>
                     <td><i style={{ color: 'red', cursor: 'pointer' }} onClick={() => { handleTrashOnClick(element) }} className="fa fa-trash-o px-3" aria-hidden="true"></i>

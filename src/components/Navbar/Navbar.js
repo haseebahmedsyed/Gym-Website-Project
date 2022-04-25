@@ -9,6 +9,7 @@ function Navbar() {
 
 
 
+
   const [mystate, setMyState] = useState(true)
 
   const context= useContext(cartContext);
@@ -46,7 +47,7 @@ function Navbar() {
                 <li className="li-nav li-nav-member"><Link className="nav-button" to="/register">Register Now <i
                   className="fa fa-long-arrow-right fa-1x" aria-hidden="true"></i></Link></li>
                 {/* <li className="li-nav"><Link to ='/login' className="nav-button">LogIn</Link></li> */}
-                {((location.pathname === '/shop') || (location.pathname === '/cart') || (location.pathname === '/checkout')) && <li className="li-nav-after"><Link className="nav-button btn-danger" to="/cart">Item(s) </Link></li>}
+                {((location.pathname === '/shop') || (location.pathname === '/cart') || (location.pathname === '/checkout')) && <li className="li-nav-after"><Link className="nav-button btn-danger" to="/cart">({context.myItems===null ? 0 : context.myItems}) Item(s) </Link></li>}
               </ul>
             </div>
           </header> :
@@ -66,7 +67,7 @@ function Navbar() {
                     className="fa fa-long-arrow-right fa-1x" aria-hidden="true"></i></Link>
                 </li>
                 {/* <li className='"li-nav-after"'><Link to ='/login' className='nav-button'>LogIn</Link></li> */}
-                {((location.pathname === '/shop') || (location.pathname === '/cart') || (location.pathname === '/checkout')) && <li className="li-nav-after"><Link className="nav-button btn-danger" to="/cart">Item(s)</Link></li>}
+                {((location.pathname === '/shop') || (location.pathname === '/cart') || (location.pathname === '/checkout')) && <li className="li-nav-after"><Link className="nav-button btn-danger" to="/cart">({context.myItems===null ? 0 : context.myItems}) Item(s)</Link></li>}
                
               </ul>
             </div>
