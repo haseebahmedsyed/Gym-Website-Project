@@ -37,14 +37,14 @@ function Navbar() {
             </div>
             <div id="navbar ">
               <ul className="ul-nav ">
-                <li className="active li-nav"><Link className="nav-button nav-active" to="/">Home</Link></li>
-                <li className="li-nav"><Link className="nav-button" to="/contact">Contact Us</Link></li>
-                <li className="li-nav"><Link className="nav-button" to="/aboutUs">About Us</Link></li>
-                <li className="li-nav"><Link className="nav-button" to="/facilities">Facilities</Link></li>
-                <li className="li-nav"><Link className="nav-button" to="/shop">Shop Gear</Link></li>
-                <li className="li-nav"><Link className="nav-button" to="/package">Packages</Link></li>
+                <li className={location.pathname === "/" ? "active li-nav" : "li-nav"}><Link className="nav-button nav-active" to="/">Home</Link></li>
+                <li className={location.pathname === "/contact" ? "active li-nav" : "li-nav"}><Link className="nav-button" to="/contact">Contact Us</Link></li>
+                <li className={location.pathname === "/aboutUs" ? "active li-nav" : "li-nav"}><Link className="nav-button" to="/aboutUs">About Us</Link></li>
+                <li className={location.pathname === "/facilities" ? "active li-nav" : "li-nav"}><Link className="nav-button" to="/facilities">Facilities</Link></li>
+                <li className={location.pathname === "/shop" ? "active li-nav" : "li-nav"}><Link className="nav-button" to="/shop">Shop Gear</Link></li>
+                <li className={location.pathname === "/package" ? "active li-nav" : "li-nav"}><Link className="nav-button" to="/package">Packages</Link></li>
 
-                <li className="li-nav li-nav-member"><Link className="nav-button" to="/register">Register Now <i
+                <li className={location.pathname === "/register" ? "active li-nav li-nav-member" : "li-nav li-nav-member"}><Link className="nav-button" to="/register">Register Now <i
                   className="fa fa-long-arrow-right fa-1x" aria-hidden="true"></i></Link></li>
                 {/* <li className="li-nav"><Link to ='/login' className="nav-button">LogIn</Link></li> */}
                 {((location.pathname === '/shop') || (location.pathname === '/cart') || (location.pathname === '/checkout')) && <li className="li-nav-after"><Link className="nav-button btn-danger" to="/cart">({context.myItems===null ? 0 : context.myItems}) Item(s) </Link></li>}
@@ -54,15 +54,15 @@ function Navbar() {
           <header >
             <div id="navbar-2" style={{ position: 'fixed',zIndex :'1' }}>
               <ul className="ul-nav-after">
-                <li className="active li-nav-after"><Link className="nav-button nav-active" to="/">Home</Link></li>
-                <li className="li-nav-after"><Link className="nav-button" to="/contact">Contact Us</Link></li>
-                <li className="li-nav-after"><Link className="nav-button" to="/aboutUs">About Us</Link></li>
-                <li className="li-nav-after"><Link className="nav-button" to="/facilities">Facilities</Link></li>
+                <li className={location.pathname === "/" ? "active li-nav-after" : "li-nav-after"}><Link className="nav-button nav-active" to="/">Home</Link></li>
+                <li className={location.pathname === "/contact" ? "active li-nav-after" : "li-nav-after"}><Link className="nav-button" to="/contact">Contact Us</Link></li>
+                <li className={location.pathname === "/aboutUs" ? "active li-nav-after" : "li-nav-after"}><Link className="nav-button" to="/aboutUs">About Us</Link></li>
+                <li className={location.pathname === "/facilities" ? "active li-nav-after" : "li-nav-after"}><Link className="nav-button" to="/facilities">Facilities</Link></li>
                 <li className="li-nav-after" id="main-head-content-after">THE MUSCLE STUDIO</li>
-                <li className="li-nav-after"><Link className="nav-button" to="/shop">Shop Gear</Link></li>
-                <li className="li-nav-after"><Link className="nav-button" to="/package">Packages</Link></li>
+                <li className={location.pathname === "/shop" ? "active li-nav-after" : "li-nav-after"}><Link className="nav-button" to="/shop">Shop Gear</Link></li>
+                <li className={location.pathname === "/package" ? "active li-nav-after" : "li-nav-after"}><Link className="nav-button" to="/package">Packages</Link></li>
 
-                <li className="li-nav-after li-nav-member">
+                <li className={location.pathname === "/register" ? "active li-nav li-nav-member" : "li-nav li-nav-member"}>
                   <Link className="nav-button nav-button-member " to="/register">Register Now <i
                     className="fa fa-long-arrow-right fa-1x" aria-hidden="true"></i></Link>
                 </li>
